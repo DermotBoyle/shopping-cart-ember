@@ -1,5 +1,7 @@
 {{page-title "Products"}}
 <Topbar />
+<div class="grid grid-cols-3">
 {{#each this.model as |product|}}
 <Product @product={{product}} />
 {{/each}}
+</div>

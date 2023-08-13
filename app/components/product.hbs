@@ -1,14 +1,13 @@
-<div class="my-4 mx-auto p-5 border border-cyan-950 rounded-lg">
-  <p class="my-2">
-    <span>Product name: {{@product.name}}</span>
-    <span>Product price: {{@product.price}}</span>
-  </p>
-  <p class="my-2">In Cart: {{this.quantity}}</p>
-  <button
-    type="button"
-    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    {{on "click" this.addToCart}}
-  >
-    Add to cart
-  </button>
+<div class="relative my-4 mx-auto border border-gray-100 shadow-sm rounded-lg">
+  <img src="{{@product.imgSrc}}" class="h-64" />
+  <div class="absolute top-4 right-4 bg-teal-100 px-2 h-8 rounded-lg grid place-items-center	">
+    <p class="text-teal-900 text-xs leading-4 font-medium">{{this.promoText}}</p>
+  </div>
+  <div class="py-2 px-2">
+    <p class="my-2 text-xl leading-7 font-bold">{{@product.name}}</p>
+    <div class="flex justify-between">
+      <p class="my-2 text-base leading-6">{{format-number @product.price style="currency" currency="EUR"}}</p>
+      <AddToCartButton />
+    </div>
+  </div>
 </div>

@@ -9,8 +9,10 @@ export default function () {
           id: '1',
           attributes: {
             name: 'Green tea',
-            price: 311,
+            price: 3.11,
             code: 'GR1',
+            imgSrc: '/assets/images/product-green-tea.png',
+            promoCode: '2F1',
           },
         },
         {
@@ -18,8 +20,12 @@ export default function () {
           id: '2',
           attributes: {
             name: 'Strawberries',
-            price: 500,
+            price: 5.0,
             code: 'SR1',
+            imgSrc: '/assets/images/product-strawberries.png',
+            promoCode: 'DCNT',
+            promoActivatesAt: 3,
+            promoDiscount: 0.1,
           },
         },
         {
@@ -27,8 +33,12 @@ export default function () {
           id: '3',
           attributes: {
             name: 'Coffee',
-            price: 1123,
+            price: 11.23,
             code: 'CF1',
+            imgSrc: '/assets/images/product-coffee.png',
+            promoCode: 'MBD',
+            promoDiscount: 0.33,
+            promoActivatesAt: 3,
           },
         },
       ],
