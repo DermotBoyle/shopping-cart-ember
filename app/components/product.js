@@ -1,6 +1,4 @@
 import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 const PROMO_CODE_TEXT = {
@@ -9,13 +7,8 @@ const PROMO_CODE_TEXT = {
 };
 
 export default class ProductComponent extends Component {
-  @tracked quantity = 0;
   @service intl;
-
-  @action
-  addToCart() {
-    this.quantity++;
-  }
+  @service shoppingCart;
 
   get promoText() {
     const product = this.args.product;
@@ -28,7 +21,6 @@ export default class ProductComponent extends Component {
         { style: 'currency', currency: 'EUR' }
       )}`;
     }
-
     return PROMO_CODE_TEXT[promoCode];
   }
 }
